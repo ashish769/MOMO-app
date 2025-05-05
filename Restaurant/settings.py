@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
-print("Decouple imported successfully!")
+from dotenv import load_dotenv
+load_dotenv()
+print("Decouple  and loadenv imported successfully!")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +31,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Ashishraj.pythonanywhere.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -162,5 +165,4 @@ EMAIL_PORT = 587
 # Load email credentials from environment variables
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-from dotenv import load_dotenv
-load_dotenv()
+
